@@ -1,0 +1,19 @@
+<h1 class="text-center">Result</h1>
+
+<div class="container">
+<div class="row w-100 justify-content-center">
+<div class="col-10 d-flex justify-content-center">
+<% if @found && @word_in_grid %>
+<h3 class="w-50 alert alert-success">Congrats! <%=@word%> is a valid word</h3>
+<% elsif ! @word_in_grid %>
+<h3 class="w-50 alert alert-danger">Sorry, <%=@word%> can't be built out of <%=@letters.join(', ')%> </h3>
+<% else %>
+<h3 class="w-50 alert alert-danger">Sorry, but <%=@word%> isn't an english word... </h3>
+<% end %>
+</div>
+<div class="col-10 d-flex flex-column align-items-center">
+<h3 class="alert alert-warning w-50">Current score: <span class="fw-bold"><%=@score%></span></h3>
+<%= link_to "Play again", new_path, class:"alert alert-link alert-secondary" %>
+</div>
+</div>
+</div>
